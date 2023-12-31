@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
+  background: #020202;
+  cursor: crosshair;
+}
+canvas {
+  display: block;
+}
+/* #backgrondImg{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+} */
+
+/* hambargar menu ---> */
+body > button{
+    position: fixed;
+    right: 0;
+    padding: 0.4rem;
+    background: none;
+    border: none;
+}
+.menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 90vw;
+    height: 70vh;
+    background-color: #e4dddd;
+    /* backdrop-filter: blur(10px); */
+    flex-direction: column;
+    z-index: 999;
+    background: #fff;
+    border-radius:5px ;
+}
+.menu> button{
+    background: none;
+    border: none;
+    padding: 0.4rem;
+}
+
+.menu-body{
+    display: flex;
+    margin-top: 20%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    /* border: solid black; */
+}
+.menu-body> #name{
+    width: 80%;
+    height: 40px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+}
+.menu-body > #generate{
+    width: 30%;
+    height: 30px;
+    background-color: aquamarine;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 30px;
+}
+.menu-body > #link{
+    height: 1.5rem;
+    width: 80%; 
+    margin-bottom: 8px;  
+}
+.menu-body > #copy{
+    width: 17%;
+    height: 13%;
+    border-radius: 10px;
+    border: none;
+    background-color: aqua;
+}
+
+
+
+/* .body-text{
+    width: 100%;
+    height: 200px;
+    border: solid white;
+} */
+.newYear {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -90%);
+  color: #fffb03;
+  font-family: "Source Sans Pro";
+  font-size: 2.2em;
+  font-weight: 800;
+  -webkit-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+}
+.year {
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #eeff58;
+  font-family: "Source Sans Pro";
+  font-size: 7.5em;
+  font-weight: 900;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.family {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #eeff58;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.wishName {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    color: #eeff58;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    max-width: 100%;
+    font-size: 2rem;
+    font-weight: 800;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0, user-scalable=no">
+    <title>wish</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <!-- <img id="backgrondImg" src="./nightSky.jpg" alt=""> -->
+    <!-- body text -->
+    <p class="newYear">Happy New Year</p>
+    <h1 class="year">2024</h1>
+    <p class="family">to you</p>
+    <div id="wishName" class="wishName"></div>
+
+
+    <!-- hambarger menu -->
+    <button type="button" id="menuButtonOpen">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" height="35" viewBox="0 -960 960 960" width="45">
+            <path
+                d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z" />
+        </svg>
+    </button>
+
+    <div class="menu">
+        <button type="button" id="menuButtonClose">
+            <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" width="45">
+                <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+        </button>
+        <form class="menu-body">
+            <input type="text" id="name">
+            <button type="button" id="generate">Generate Link</button>
+            <input type="text" id="link">
+            <button id="copy" type="button">copy</button>
+        </form>
+
+    </div>
+
+
+
+
+    <canvas id="birthday"></canvas>
+    <script src="canvas.js"></script>
+
+    <script>
+        const menuButtonOpen = document.getElementById("menuButtonOpen");
+        const menuButtonClose = document.getElementById("menuButtonClose");
+        const menu = document.querySelector(".menu");
+
+        var isTouchDevice = 'ontouchstart' in document.documentElement;
+        var eventName = isTouchDevice ? 'touchstart' : 'click';
+
+        menuButtonOpen.addEventListener(eventName, () => {
+            menu.style.display = 'flex';
+        })
+        menuButtonClose.addEventListener(eventName, () => {
+            menu.style.display = 'none';
+        })
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
