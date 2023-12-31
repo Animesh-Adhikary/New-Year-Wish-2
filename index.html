@@ -10,14 +10,8 @@
 
 <body>
     <!-- <img id="backgrondImg" src="./nightSky.jpg" alt=""> -->
-    <!-- body text -->
-    <p class="newYear">Happy New Year</p>
-    <h1 class="year">2024</h1>
-    <p class="family">to you</p>
-    <div id="wishName" class="wishName"></div>
 
-
-    <!-- hambarger menu -->
+    <!-- hambarger menuButtonOpen -->
     <button type="button" id="menuButtonOpen">
         <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" height="35" viewBox="0 -960 960 960" width="45">
             <path
@@ -25,9 +19,18 @@
         </svg>
     </button>
 
+    <!-- body text -->
+    <div class="body-text">
+        <p class="newYear">Happy New Year</p>
+        <h1 class="year animate-charcter">2024</h1>
+        <p class="family">to you</p>
+        <div id="wishName" class="wishName animate-charcter"></div>
+    </div>
+
+    <!-- menuButtonClose section -->
     <div class="menu">
         <button type="button" id="menuButtonClose">
-            <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" width="45">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" height="35" viewBox="0 -960 960 960" width="45">
                 <path
                     d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
             </svg>
@@ -38,15 +41,14 @@
             <input type="text" id="link">
             <button id="copy" type="button">copy</button>
         </form>
-
     </div>
 
 
-
-
+    <!-- <audio src="launchSound" src="./firework_launching-sound.mp3"></audio>
+    <audio src="blustSound" src="./blust-sound_final.mp3"></audio> -->
     <canvas id="birthday"></canvas>
-    <script src="canvas.js"></script>
 
+    <script src="canvas.js"></script>
     <script>
         const menuButtonOpen = document.getElementById("menuButtonOpen");
         const menuButtonClose = document.getElementById("menuButtonClose");
