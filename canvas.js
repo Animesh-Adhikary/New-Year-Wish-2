@@ -3,21 +3,8 @@ const PI2 = Math.PI * 2;
 const random = (min, max) => (Math.random() * (max - min + 1) + min) | 0;
 const timestamp = (_) => new Date().getTime();
 
-// code for adjusting the size of wishName ---->
-// const adjustFontSize = () => {
-//   const wishName = document.getElementById("wishName");
-//   const maxWidthPercentage = 80; // Set your desired maximum width percentage
-//   const viewportWidth = window.innerWidth;
-//   const maxWidth = (maxWidthPercentage / 100) * viewportWidth;
-//   const fontSize = Math.min(
-//     (wishName.offsetWidth / wishName.scrollWidth) * 2 * maxWidth,
-//     2 * maxWidth
-//   );
-
-//   wishName.style.fontSize = `${fontSize}px`;
-// };
-// window.addEventListener("resize", adjustFontSize);
-// adjustFontSize();
+const launchSound =  new Audio("./firework_launching-sound.mp3");
+const cracklingSound = new Audio("./blust-sound_final.mp3");
 
 // container
 class Birthday {
@@ -53,7 +40,9 @@ class Birthday {
           x,
           y,
           random(0, 260),
-          random(30, 110)
+          random(30, 110),
+          launchSound,
+          cracklingSound
         )
       );
 
@@ -78,7 +67,9 @@ class Birthday {
           random(0, this.width),
           random(this.spawnC, this.spawnD),
           random(0, 360),
-          random(30, 110)
+          random(30, 110),
+          launchSound,
+          cracklingSound
         )
       );
       this.counter = 0;
@@ -102,6 +93,8 @@ class Firework {
 
     this.shade = shade;
     this.history = [];
+
+    launchSound.play();
   }
   update(delta) {
     if (this.dead) return;
@@ -129,7 +122,7 @@ class Firework {
             (this.y + this.offsprings * Math.sin((PI2 * i) / babies)) | 0;
 
           birthday.fireworks.push(
-            new Firework(this.x, this.y, targetX, targetY, this.shade, 0)
+            new Firework(this.x, this.y, targetX, targetY, this.shade, 0, launchSound, cracklingSound)
           );
         }
       }
@@ -152,6 +145,9 @@ class Firework {
       ctx.arc(this.x, this.y, 1, 0, PI2, false);
       ctx.fill();
     }
+    if(this.history.length===0 && !this.madeChilds){
+      cracklingSound.play();
+    }
   }
 }
 
@@ -165,14 +161,6 @@ window.onresize = () => birthday.resize();
 document.onclick = (evt) => birthday.onClick(evt);
 document.ontouchstart = (evt) => birthday.onClick(evt);
 
-// const backgroundImg = new Image();
-// backgroundImg.src = "./nightSky.jpg";
-
-// backgroundImg.onload = () => {
-//   canvas.width = window.innerWidth;
-//   canvas.height = window.innerHeight;
-//   ctx.drawImage(backgroundImg, 0, 0, canvas.width, canvas.height);
-// };
 
   (function loop() {
     requestAnimationFrame(loop);
